@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
@@ -40,3 +41,7 @@ Route::get('dashboard',[DashboardController::class, 'index']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Route::get('/users','UsersController@Index')->name('users.index');
+
+Route::get('/users',[UsersController::class, 'index']);
