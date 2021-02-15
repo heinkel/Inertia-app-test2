@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +18,22 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('app');
-//   return Inertia::render('Welcome', [
-//             'foo' => 'bar',
-//         ]);
-});
+return Inertia::render('Welcome', [
+        'foo' => 'bar',
+        ]);
+    });
+Route::get('/about', function () {
+    return Inertia::render('About', [
+        'foo' => 'bar',
+        ]);
+    });
+Route::get('/contact', function () {
+    return Inertia::render('Contact', [
+        'foo' => 'bar',
+        ]);
+    });
+
+
 
 Route::get('dashboard',[DashboardController::class, 'index']);
 

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>This is your Dashboard</p>
+        <p>This is your site {{fname}}, {{lname}}</p>
     </div>
 </template>
 
