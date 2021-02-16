@@ -176,7 +176,7 @@ var render = function() {
   return _c("layout", [
     _c("div", [
       _vm._v(
-        "\n        This is the Contact Page: " + _vm._s(_vm.foo) + "\n    "
+        "\n        This is the Welcome Page: " + _vm._s(_vm.foo) + "\n    "
       )
     ])
   ])

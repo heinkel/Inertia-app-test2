@@ -1,17 +1,17 @@
 <template>
     <layout>
         <div>
-            This is the users Page.
+            This is the Users/index.vue Page. {{lname}}
         </div>
     </layout>
 </template>
 
 <script>
 
-import Layout from './Shared/Layout.vue'
+import Layout from '../Shared/Layout.vue'
 
   export default {
-    props: ['users'],
+    props: ['lname'],
     components: {
         Layout,
       },

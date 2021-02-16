@@ -1,11 +1,21 @@
 <template>
-    <div>
-        <p>This is your site {{fname}}, {{lname}}</p>
-    </div>
+    <layout>
+        <div>
+            This is the dashboard Page: {{ lname }}
+        </div>
+    </layout>
 </template>
 
 <script>
-export default {
-    props: ['fname','lname']
-}
+
+import Layout from '../Shared/Layout.vue'
+
+  export default {
+    props: ['lname'],
+    components: {
+        Layout,
+      },
+
+        Layout  }
 </script>
+

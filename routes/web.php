@@ -7,6 +7,7 @@ use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,24 +20,34 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-return Inertia::render('Welcome', [
-        'foo' => 'bar',
+    return Inertia::render('Welcome', [
+        'foo' => 'welcome',
         ]);
     });
 Route::get('/about', function () {
     return Inertia::render('About', [
-        'foo' => 'bar',
+        'foo' => 'about',
         ]);
     });
 Route::get('/contact', function () {
     return Inertia::render('Contact', [
-        'foo' => 'bar',
+        'foo' => 'contact',
+        ]);
+    });
+Route::get('/i', function () {
+    return Inertia::render('Dashboard/Index', [
+        'lname' => 'dash',
+        ]);
+    });
+Route::get('/users', function () {
+    return Inertia::render('Users/Index', [
+        'lname' => 'usr',
         ]);
     });
 
 
-
-Route::get('dashboard',[DashboardController::class, 'index']);
+//Route::redirect('/', '/users', 301);
+//Route::get('dashboard',[DashboardController::class, 'index']);
 
 Auth::routes();
 
@@ -44,4 +55,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //Route::get('/users','UsersController@Index')->name('users.index');
 
-Route::get('/users',[UsersController::class, 'index']);
+//Route::get('/users',[App\Http\Controllers\UsersController::class, 'index']);
+
+//Route::get('users',[UsersController::class, 'index']);
